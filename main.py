@@ -58,7 +58,7 @@ messages = [
 while (True):
     query = input(">>")
     formatted_query = {'type': 'user', 'user': query}
-    messages.append({"role": "user", "content": f'"{formatted_query}"'})
+    messages.append({"role": "user", "content": f"{formatted_query}"})
     while (True):
         chat = openai.chat.completions.create(
             model="gpt-4o",
@@ -77,7 +77,7 @@ while (True):
             fn = tools[call["function"]]
             observation = fn(call["input"])
             obs = {"type": "observation", "observation": observation}
-            messages.append({"role": "developer", "content": f'"{obs}"'})
+            messages.append({"role": "developer", "content": f"{obs}"})
 
             # # user_input = "Hey, what is the weather of Delhi ?"
 
